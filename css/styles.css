@@ -1,0 +1,218 @@
+@import url(https://fonts.googleapis.com/css2?family=Gafata&display=swap);
+@import url(https://fonts.googleapis.com/css2?family=Audiowide&display=swap);
+
+body {
+    font-family: 'Gafata', sans-serif;
+}
+.wrapper {
+    height: 100px;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    background-color: rgb(19, 19, 19);
+    color: white;
+
+}
+
+.wrapper h1 {
+    color: #fff;
+    font-size: 25px;
+    font-weight: 600;
+}
+
+.not_found {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    font-size: 35px;
+    width: 100%;
+    color: #fff;
+}
+
+/* =================button */
+button {
+    width: 80px;
+    height: 30px;
+    border: none;
+    outline: none;
+    color: #fff;
+    background: #111;
+    cursor: pointer;
+    position: relative;
+    z-index: 0;
+    border-radius: 10px;
+    font-family:'Times New Roman', Times, serif;
+    font-size: 15px;
+}
+
+button:before {
+    content: '';
+    background: linear-gradient(45deg, #ff0000, #ff7300, #fffb00, #48ff00, #00ffd5, #002bff, #7a00ff, #ff00c8, #ff0000);
+    position: absolute;
+    top: -2px;
+    left:-2px;
+    background-size: 400%;
+    z-index: -1;
+    filter: blur(5px);
+    width: calc(100% + 4px);
+    height: calc(100% + 4px);
+    animation: glowing 20s linear infinite;
+    opacity: 0;
+    transition: opacity .3s ease-in-out;
+    border-radius: 10px;
+}
+
+button:active {
+    color: #000
+}
+
+button:active:after {
+    background: transparent;
+}
+
+button:hover:before {
+    opacity: 1;
+}
+
+button:after {
+    z-index: -1;
+    content: '';
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background: #111;
+    left: 0;
+    top: 0;
+    border-radius: 10px;
+}
+
+@keyframes glowing {
+    0% { background-position: 0 0; }
+    50% { background-position: 400% 0; }
+    100% { background-position: 0 0; }
+}
+
+
+/* ===============from/inputs */
+
+form {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 30px;
+}
+
+form input {
+    max-width: 150px;
+    height: 25px;
+    border-radius: 15px;
+    padding-left: 10px;
+    background-color:rgb(48, 48, 48);
+    color: #fff;
+    font-size: 15px;
+    font-family: 'Audiowide', display;
+}
+
+form select {
+    width: 100px;
+    background-color:rgb(65, 42, 42);
+    color: white;
+    height: 25px;
+}
+
+
+/* =============== container */
+
+.container {
+    min-height: 100vh;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 50px;
+    padding: 25px;
+    background: rgb(37,78,91);
+    background: linear-gradient(90deg, rgba(37,78,91,0.8715861344537815) 0%, rgba(5,0,59,1) 35%, rgba(79,9,9,1) 100%);
+}
+
+.container .card {
+    flex: 1 1 18%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 40px;
+    padding: 15px;
+    -webkit-box-shadow: 9px -9px 11px 1px rgba(249, 0, 0, 1);
+    -moz-box-shadow: 9px -9px 11px 1px rgba(249, 0, 0, 1);
+    box-shadow: 9px -9px 11px 1px rgba(249, 0, 0, 1);
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.container .card img {
+    width: 100%;
+    height: 100%;
+    border-radius: 5px;
+}
+.container .card .title {
+    height: 40px;
+    font-size: 20px;
+    font-family: Arial, Helvetica, sans-serif;
+    color: #fff;
+    line-height: 1.2;
+}
+
+
+/* ============ cards by ID */
+
+.container .cardID {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 40px;
+    width: 700px;
+    margin: 50px auto;
+    padding: 15px;
+    -webkit-box-shadow: 4px 4px 23px 0px rgba(0, 219, 240, 0.53);
+    -moz-box-shadow: 4px 4px 23px 0px rgba(0, 219, 240, 0.53);
+    box-shadow: 4px 4px 23px 0px rgba(0, 219, 240, 0.53);
+    background: rgb(47,51,46);
+    background: linear-gradient(90deg, rgba(47,51,46,0.8715861344537815) 0%, rgba(0,59,45,1) 50%, rgba(0,0,0,1) 100%);
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.container .cardID img {
+    width: 400px;
+    height: 500px;
+    border-radius: 15px;
+}
+
+.container .cardID .block1 {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 40px;
+}
+.container .cardID .block2 {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 40px;
+}
+
+.container .cardID .block1 .title {
+    height: 40px;
+    font-size: 20px;
+    font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+    color: #fff;
+    line-height: 1.2;
+}
+
+.container .cardID p {
+    color: rgb(255, 238, 0);
+    font-size: 16px;
+    font-family: Arial, Helvetica, sans-serif;
+}
